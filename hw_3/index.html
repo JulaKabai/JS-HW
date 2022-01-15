@@ -4,18 +4,55 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/style.css">
     <title>index.html</title>
 </head>
 <body>
-    <form id="input-area" style="display: flex; flex-direction: column;">
-        <label for="N-number">
-            <input type="number" id="N-number" name="N-number">
+    <form id="biggest-number-form" style="display: flex; flex-direction: column;">
+        <label for="biggest-number-label">
+            <input type="number" id="biggest-number">
+        </label>
+        <button type="submit" id="biggest-number" style="width: fit-content;">Submit</button>   
+        <p id="biggest-number-result" class="result"></p>
+        <p id="biggest-number-error" class="error"></p>
+    </form>
+
+
+
+    <form id="first-letter-capitalize-form" style="display: flex; flex-direction: column;">
+        <label for="first-letter-capitalise">
+            <input type="text" id="name-of-user" name="name-of-user">
+        </label>
+        <button type="submit" id="" style="width: fit-content;">submit</button>   
+        <p id="first-letter-capitalize-result" class="result"></p>
+    </form>
+
+
+
+    <form id="calculating-salary-difference-form" style="display: flex; flex-direction: column;">
+        <label for="calculating-difference">
+            <input type="number" id="calculating-difference-salary" name="calculating-difference">
         </label>
         <label for="M-number">
-            <input type="number" id="M-number" name="M-number">
+            <input type="number" id="calculating-difference-tax" name="calculating-difference" >
         </label>
-        <button type="submit" id="button-submit" style="width: fit-content;">submit</button>   
-        <p id="result"> </p>
+        <button type="submit" id="" style="width: fit-content;">submit</button>   
+        <p id="calculating-salary-difference-result" class="result"> </p>
+        <p id="calculating-salary-difference-error" class="error"> </p>
+
+    </form>
+
+    <form id="return-random-number-form" style="display: flex; flex-direction: column;">
+        <label for="return-random-number">
+            <input type="number" id="return-first-random-number" name="return-random-number">
+        </label>
+        <label for="M-number">
+            <input type="number" id="return-second-random-number" name="return-random-number" >
+        </label>
+        <button type="submit" id="" style="width: fit-content;">submit</button>   
+        <p id="return-random-number-result" class="result"> </p>
+        <p id="return-random-number-error" class="error"> </p>
+
     </form>
     <!-- <form id="input-area" style="display: flex; flex-direction: column;">
         <label for="N-number">
