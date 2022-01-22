@@ -81,47 +81,66 @@ returnFirstRandomNumberForm .addEventListener("submit", (event) => {
 const getRandomNumber = (min, max) =>  Math.round(Math.random() * (max - min)+ min);
 
 //////////////////////////////////////////////
-// let string = prompt("enter rhe word,that we count how many letter 'a' used in it ");
-// let letter = 'a';
-// var count = string.split("a").length - 1;
-// console.log(count);
+const calculateLetterForm = document.getElementById('calculate-letter-form');
+const calculateLetterResult = document.getElementById ('calculate-letter-result');
+const calculateLetterError = document.getElementById ('calculate-letter-error')
+calculateLetterForm.addEventListener('submit',(event)=>{
+	event.preventDefault();
+	const string = event.target[0].value;
+	calculateLetterResult.innerHTML = '';
+	calculateLetterError.innerHTML = '';
+	if('a'==='a'){
+	calculateLetterResult.innerHTML = countReplace(string)
+}else{
+	calculateLetterError.innerHTML = 'please,wright in english'
+}
+
+})
+function countReplace (str) {
+    return (str.split('a').length) - 1;
+};
+
 ////////////////////////////////////////////////
-// const form = document.getElementById("input-area");
-// const result = document.getElementById("result");
+const calculateDegreeForm = document.getElementById('calculate-degree-form');
+const calculateDegreeResult = document.getElementById ('calculate-degree-result');
+calculateDegreeForm.addEventListener('submit',(event)=>{
+	event.preventDefault();
+	const number = event.target[0].value;
+	const power = event.target[1].value;
+    calculateLetterResult.innerHTML = '';
+	calculateLetterError.innerHTML = '';
+	calculateDegreeResult.innerHTML = exponentiation(number, power)
 
-// const number = 3;
-// const power = 3;
+})
 
-// const exponentiation = (number, power) => {
-//     let result = number;
-//         if(power > 0){
-//             for(let i = 0; i < power - 1; i++) {
-//                 result *= number;
-//             }
-//         } else if(power === 0){
-//             result = 1;
-//         }
-//         else{
-//             for(let i = 0; i <(power*-1) - 1; i++) {
-//                 result *= number;
-//             }
-//             result = 1 / result
-//         }
-//         console.log(result)
-// }
+const exponentiation = (number, power) => {
+    let result = number;
+        if(power > 0){
+            for(let i = 0; i < power - 1; i++) {
+                result *= number;
+            }
+        } else if(power === 0){
+            result = 1;
+        }
+        else{
+            for(let i = 0; i <(power*-1) - 1; i++) {
+                result *= number;
+            }
+            result = 1 / result
+        }
+		return result;      
+}
 
-// exponentiation(number, power);
 
-// // form.addEventListener("submit", (event) => {
-// // 	event.preventDefault();
-// // 	const valueOfNumber = parseInt(event.target[0].value);
-// // 	const valueOfPower = parseInt(event.target[1].value);
 
-// // })
 /////////////////////////////////////////////////
-// const name = "julia";
-// function capFirst(str){
-//     return str.charAt(0).toUpperCase() + str.slice (1) ;
-// }
-// console.log(capFirst)
-//////////////////////////////////////////////////
+// const numberLest = prompt('enter');
+// const getRandomPass = () => Math.floor(1000 + Math.random() * numberLest)
+// const result = getRandomPass();
+// console.log(result)
+/////////////////////////////////////////////////
+const word = 'blablabla';
+const str = 'a';
+const deletingLetterA = word - str.substring('a')
+const result = deletingLetterA;
+console.log(result)
