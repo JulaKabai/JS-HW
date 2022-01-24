@@ -1,3 +1,4 @@
+///////////////////////////////////////////////знаходить найбільшу цифру з числа
 const biggestNumberForm = document.getElementById("biggest-number-form");
 const biggestNumberResult = document.getElementById("biggest-number-result");
 const biggestNumberError = document.getElementById("biggest-number-error");
@@ -18,7 +19,7 @@ biggestNumberForm.addEventListener("submit", (event) => {
 const maxDigit = (number) => Math.max(...number.split(""));
 
 
-////////////////////////////////////////////
+////////////////////////////////////////////редагує ім'я
 
 
 const firstLetterCapitalizeForm = document.getElementById("first-letter-capitalize-form");
@@ -34,7 +35,7 @@ firstLetterCapitalizeForm.addEventListener("submit", (event) => {
 const capitalizeFirstLetter = str => str[0].toUpperCase()+str.substring(1).toLowerCase();
 
 
-///////////////////////////////////////////
+///////////////////////////////////////////вираховує податок з зарплати
 
 
 const calculatingSalaryDifferenceForm = document.getElementById("calculating-salary-difference-form");
@@ -61,7 +62,7 @@ calculatingSalaryDifferenceForm.addEventListener("submit", (event) => {
 
 const calcPercent = (salary , tax) => salary - (salary / 100 * tax);
 
-/////////////////////////////////////////////
+/////////////////////////////////////////////знаходіть рандомне число
 const returnFirstRandomNumberForm = document.getElementById('return-random-number-form');
 const returnRandomNumberResult = document.getElementById('return-random-number-result');
 const ReturnRandomNumberError = document.getElementById('return-random-number-error');
@@ -80,7 +81,7 @@ returnFirstRandomNumberForm .addEventListener("submit", (event) => {
 
 const getRandomNumber = (min, max) =>  Math.round(Math.random() * (max - min)+ min);
 
-//////////////////////////////////////////////
+//////////////////////////////////////////////рахує кількість буков а
 const calculateLetterForm = document.getElementById('calculate-letter-form');
 const calculateLetterResult = document.getElementById ('calculate-letter-result');
 const calculateLetterError = document.getElementById ('calculate-letter-error')
@@ -100,7 +101,7 @@ function countReplace (str) {
     return (str.split('a').length) - 1;
 };
 
-////////////////////////////////////////////////
+////////////////////////////////////////////////визначає ступінь числа
 const calculateDegreeForm = document.getElementById('calculate-degree-form');
 const calculateDegreeResult = document.getElementById ('calculate-degree-result');
 calculateDegreeForm.addEventListener('submit',(event)=>{
@@ -133,14 +134,49 @@ const exponentiation = (number, power) => {
 
 
 
-/////////////////////////////////////////////////
-// const numberLest = prompt('enter');
-// const getRandomPass = () => Math.floor(1000 + Math.random() * numberLest)
-// const result = getRandomPass();
-// console.log(result)
-/////////////////////////////////////////////////
-const word = 'blablabla';
-const str = 'a';
-const deletingLetterA = word - str.substring('a')
-const result = deletingLetterA;
-console.log(result)
+/////////////////////////////////////////////////випадковий пароль
+const generatesRandomPassForm = document.getElementById('generates-random-pass-form');
+const generatesRandomPassResult = document.getElementById ('generates-random-pass-result');
+const generatesRandomPassError = document.getElementById ('generates-random-pass-error')
+generatesRandomPassForm.addEventListener('submit',(event)=>{
+	event.preventDefault();
+	const numberLest = event.target[0].value;
+    generatesRandomPassResult.innerHTML = '';
+	generatesRandomPassError.innerHTML = '';
+	generatesRandomPassResult.innerHTML = getRandomPass(numberLest)
+
+})
+
+const numberLest = 90000000;
+const getRandomPass = () => Math.floor(1000 + Math.random() * numberLest)
+/////////////////////////////////////////////////видаляє букви а
+const replaceCharacterForm = document.getElementById('replace-character-form');
+const replaceCharacterResult = document.getElementById ('replace-character-result');
+const replaceCharacterError = document.getElementById ('replace-character-error')
+replaceCharacterForm.addEventListener('submit',(event)=>{
+	event.preventDefault();
+	const str = event.target[0].value;
+    replaceCharacterResult.innerHTML = '';
+	replaceCharacterError.innerHTML = '';
+	replaceCharacterResult.innerHTML = replaceCharacter(str)
+
+})
+const replaceCharacter = (str) => newString = str.replace(/a/gi,'');
+///////////////////////////////////////////////////шукач поліндромів
+const polindromSeekerForm = document.getElementById('polindrom-seeker-form');
+const polindromSeekResult = document.getElementById ('polindrom-seek-result');
+const polindromSeekError = document.getElementById ('polindrom-seek-error')
+polindromSeekerForm.addEventListener('submit',(event)=>{
+	event.preventDefault();
+	const str = event.target[0].value;
+    polindromSeekResult.innerHTML = '';
+	polindromSeekError.innerHTML = '';
+	polindromSeekResult.innerHTML = palindromesSeeker(str)
+
+})
+
+const palindromesSeeker = (string) => {
+    const solidTerm = string.toLowerCase().split(" ").join("");
+    return solidTerm === solidTerm.split('').reverse().join("");
+    
+}
