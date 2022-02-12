@@ -27,77 +27,53 @@ const students = [
 		},
 	},
 ];
-////////////////////////////////////////////////task 1//
-//student 1
+/////////////////////////////////////////////task 1//
 const studentsSubjects = (student) => {
-	const subjectsArr = Object.keys(student.subjects)
-	const capitalizeLetter = subjectsArr.map((subject) => {
-		return (subject[0].toUpperCase() + subject.substring(1).toLowerCase()).replace('_'," ");
-	})
-	console.log(capitalizeLetter)
-	return null;	
+	const subjectsArr = Object.keys(student.subjects);
+	return subjectsArr.map((subject) =>
+		(subject[0].toUpperCase() + subject.substring(1).toLowerCase()).replace(
+			"_",
+			" "
+		)
+	);
 };
 console.log(studentsSubjects(students[0]));
-//student 2
-const studentsSubject = (student) => {
-	const subjectsArr = Object.keys(student.subjects)
-	const capitalizeLetter = subjectsArr.map((subject) => {
-		return (subject[0].toUpperCase() + subject.substring(1).toLowerCase()).replace('_'," ");
-	})
-	console.log(capitalizeLetter)
-	return null;	
-};
 console.log(studentsSubjects(students[1]));
-//student 3
-const studentsSubj = (student) => {
-	const subjectsArr = Object.keys(student.subjects)
-	const capitalizeLetter = subjectsArr.map((subject) => {
-		return (subject[0].toUpperCase() + subject.substring(1).toLowerCase()).replace('_'," ");
-	})
-	console.log(capitalizeLetter)
-	return null;	
-};
 console.log(studentsSubjects(students[2]));
 ////////////////////////////////////////////task 2
-//student1
-		const getAverageMark = (student) => {
-		const markArr = Object.values(student.subjects)
-		const unitedNote = markArr.reduce((a, b) =>{
-			return (a.concat(b))
-		})
-		const midNote = unitedNote.reduce((sum, current) => {
-			return (sum + current);
-		})
-		const averageScore = (midNote / unitedNote.length);
-		console.log(averageScore)
-		return null
-		}
-		console.log(getAverageMark(students[0]))
-	//student2
-	const getAverageMarks = (student) => {
-		const markArr = Object.values(student.subjects)
-		const unitedNote = markArr.reduce((a, b) =>{
-			return (a.concat(b));
-		})
-		const midNote = unitedNote.reduce((sum, current) => {
-			return (sum + current);
-		})
-		console.log(midNote / unitedNote.length);
-		return null;
-		}
-		console.log(getAverageMark(students[1]))
-	//student3
-	const getAveragesMarks = (student) => {
-		const markArr = Object.values(student.subjects)
-		const unitedNote = markArr.reduce((a, b) =>{
-			return (a.concat(b))
-		})
-		const midNote = unitedNote.reduce((sum, current) => {
-			return (sum + current)
-		})
-		console.log(midNote / unitedNote.length)
-		return null
-		}
-		console.log(getAverageMark(students[2]))
+const getAverageMark = (student) => {
+	const markArr = Object.values(student.subjects);
+	const midNote = markArr.flat().reduce((sum, current) =>  sum + current);
+	return (midNote / markArr.flat().length).toFixed(2);
+};
+console.log(getAverageMark(students[0]));
+console.log(getAverageMark(students[1]));
+console.log(getAverageMark(students[2]));
 /////////////////////////////////////////////task3
+const getStudentsInfo = (student) => {
+	return {
+		course: student.course,
+		name: student.name,
+		averageMark: getAverageMark(student),
+	};
+};
+console.log(getStudentsInfo(students[0]));
+console.log(getStudentsInfo(students[1]));
+console.log(getStudentsInfo(students[2]));
+//////////////////////////////////////////////task4
+const getStudNames = () => {
+		const studentsNames = students.map((student) => student.name)
+		return studentsNames.sort()
+}
+console.log(getStudNames(students))
+//////////////////////////////////////////////task5
+const getBestStudent = () => {
+	const marks = [getAverageMark(students[0]),getAverageMark(students[1]),getAverageMark(students[2])]
+	// [getAverageMark(students[0]),getAverageMark(students[1]),getAverageMark(students[2])] = ['Tanya', 'Victor', 'Anton']
+	console.log(marks)
+return null;
+}
+console.log(getBestStudent(students))
+
+
 
