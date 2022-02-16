@@ -61,19 +61,32 @@ console.log(getStudentsInfo(students[0]));
 console.log(getStudentsInfo(students[1]));
 console.log(getStudentsInfo(students[2]));
 //////////////////////////////////////////////task4
-const getStudNames = () => {
+const getStudNames = (students) => {
 		const studentsNames = students.map((student) => student.name)
 		return studentsNames.sort()
 }
 console.log(getStudNames(students))
 //////////////////////////////////////////////task5
-const getBestStudent = () => {
-	const marksArr = [getAverageMark(students[0]),getAverageMark(students[1]),getAverageMark(students[2])];
-	//[getAverageMark(students[0]),getAverageMark(students[1]),getAverageMark(students[2])] = ['Tanya', 'Victor', 'Anton']
-	console.log(marksArr)
-return null;
+const getBestStudent = (students) => {
+	const marksArr = students.map((student) => Number(getAverageMark(student)));
+	return students[marksArr.indexOf(Math.max(...marksArr))].name;
 }
 console.log(getBestStudent(students))
+//////////////////////////////////////////////task6
 
-
-
+const calculateWordLetter = (word) => {
+	const wordSplit = word.toLowerCase().split('');
+	const calculateLetter = wordSplit.reduce((acc, letter) => {
+		if(acc[letter] === undefined){
+			return Object.assign(acc, {
+				[letter]: 1
+			})
+		}else{
+			return Object.assign(acc, {
+				[letter]: acc[letter] + 1
+			});
+		}
+	}, {} )	
+	return calculateLetter
+}
+console.log(calculateWordLetter('test'))
