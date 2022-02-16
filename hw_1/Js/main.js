@@ -8,11 +8,8 @@ console.log(minPrice);
 const summa = dress + bag + shoe;
 console.log(summa);
 const roundedDress = Math.floor(dress);
-// console.log(roundedDress);
 const roundedBag = Math.floor(bag);
-// console.log(roundedBag);
 const roundedShoe = Math.floor(shoe);
-// console.log(roundedShoe);
 const roundedGoods = roundedDress + roundedBag + roundedShoe;
 console.log(roundedGoods);
 const roundedSumma = Math.ceil(roundedGoods / 100) * 100;
@@ -28,4 +25,4 @@ console.log(sale);
 const discountedPrice = (summa - sale).toFixed(2);
 console.log(discountedPrice);
 const profit = discountedPrice / 2;
-console.log(profit)
+console.log(profit) 
