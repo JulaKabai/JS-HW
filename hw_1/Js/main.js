@@ -15,7 +15,7 @@ const roundedShoe = Math.floor(shoe);
 // console.log(roundedShoe);
 const roundedGoods = roundedDress + roundedBag + roundedShoe;
 console.log(roundedGoods);
-const roundedSumma = Math.ceil( roundedGoods / 100) *100;
+const roundedSumma = Math.ceil(roundedGoods / 100) * 100;
 console.log(roundedSumma);
 const isEven = summa % 2 == 0;
 console.log(isEven);
