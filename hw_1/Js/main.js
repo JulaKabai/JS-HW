@@ -28,4 +28,4 @@ console.log(sale);
 const discountedPrice = (summa - sale).toFixed(2);
 console.log(discountedPrice);
 const profit = discountedPrice / 2;
-console.log(profit);
+console.log(profit)
