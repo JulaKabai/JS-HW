@@ -68,9 +68,9 @@ const getStudNames = () => {
 console.log(getStudNames(students))
 //////////////////////////////////////////////task5
 const getBestStudent = () => {
-	const marks = [getAverageMark(students[0]),getAverageMark(students[1]),getAverageMark(students[2])]
-	// [getAverageMark(students[0]),getAverageMark(students[1]),getAverageMark(students[2])] = ['Tanya', 'Victor', 'Anton']
-	console.log(marks)
+	const marksArr = [getAverageMark(students[0]),getAverageMark(students[1]),getAverageMark(students[2])];
+	//[getAverageMark(students[0]),getAverageMark(students[1]),getAverageMark(students[2])] = ['Tanya', 'Victor', 'Anton']
+	console.log(marksArr)
 return null;
 }
 console.log(getBestStudent(students))
