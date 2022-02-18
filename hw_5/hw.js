@@ -1,15 +1,11 @@
 //1
-const min = 3;
-const max = 15;
-const length = 8;
-const getRandomNumber = Math.round(Math.random() * (max - min) );
-const getRandomArr = () => {
-    const numbers = [];
-    for(let i = 0;i < length; i++){
-        numbers.push(getRandomNumber)
-    }return numbers
+const getRandomArray = function (length, min, max) {
+    let randomArr = [];
+        for (i = 0; i < length; i++) randomArr.push(Math.floor(Math.random()*(max-min) + min))
+    return randomArr
 }
-console.log(getRandomArr());
+    
+console.log(getRandomArray(15, 1, 100) )
 
 //   #6.
 const arr = [1, -1, 2, -2, 3 ,0];
