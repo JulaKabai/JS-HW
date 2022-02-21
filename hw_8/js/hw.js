@@ -18,6 +18,16 @@ class Student {
 		const midNote = this.marks.flat().reduce((sum, current) => sum + current);
 		return midNote / this.marks.flat().length;
 	}
+	get dismissStudent(){
+		if(this.fullName === "Гірченко Іван Іванович"){
+			return(this.marks = null);						
+		}
+	}
+	get recoverStudent(){
+		if(this.fullName === "Гірченко Іван Іванович"){
+			return this.marks === this.marks
+		}
+	}
 }
 
 class BudgetStudent extends Student{
@@ -26,10 +36,10 @@ class BudgetStudent extends Student{
 	this.scholarship = scholarship;
 	}
 	get getScholarship() {
-		if(student3.getMidNote() <= 5) {
+		if(student2.getMidNote() > 4) {
 				return setInterval(() => console.log('Ви отримали' + ' ' + this.scholarship + 'uah' + ' ' + 'стипендії'),3000)
 			}else{
-				return this.studentsMark
+				return console.log('вам не заплатять:c')
 			}
 		}
 }
@@ -61,5 +71,7 @@ console.log(student.studentsMark);
 console.log(student.getMidNote());
 const payment = new BudgetStudent(1400,student3)
 //payment.getScholarship
-
-
+student3.dismissStudent
+console.log(student3)
+student3.recoverStudent
+console.log(student3)
