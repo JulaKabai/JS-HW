@@ -18,30 +18,36 @@ class Student {
 		const midNote = this.marks.flat().reduce((sum, current) => sum + current);
 		return midNote / this.marks.flat().length;
 	}
-	get dismissStudent(){
-		if(this.fullName === "Гірченко Іван Іванович"){
-			return(this.marks = null);						
-		}
+	get dismissStudent() {
+		this.marks = null;
+		this.scholarship = null;
+		return console.log("вас вигнано :с", student3);
 	}
-	get recoverStudent(){
-		if(this.fullName === "Гірченко Іван Іванович"){
-			return this.marks === this.marks
-		}
+	get recoverStudent() {
+		this.marks = [2, 4, 4, 3];
+		this.scholarship = "вам не заплатять:c";
+		return console.log("ми взяли вас назад :З", student3);
 	}
 }
 
-class BudgetStudent extends Student{
-	constructor(scholarship, university, course, fullName, marks){
-	super(university, course, fullName, marks)
-	this.scholarship = scholarship;
+class BudgetStudent extends Student {
+	constructor(scholarship, university, course, fullName, marks) {
+		super(university, course, fullName, marks);
+		this.scholarship = scholarship;
 	}
 	get getScholarship() {
-		if(student2.getMidNote() > 4) {
-				return setInterval(() => console.log('Ви отримали' + ' ' + this.scholarship + 'uah' + ' ' + 'стипендії'),3000)
-			}else{
-				return console.log('вам не заплатять:c')
-			}
+		if (student.getMidNote() > 4) {
+			return setInterval(
+				() =>
+					console.log(
+						"Ви отримали" + " " + this.scholarship + "uah" + " " + "стипендії"
+					),
+				30000
+			);
+		} else {
+			return console.log("вам не заплатять:c");
 		}
+	}
 }
 const student = new Student(
 	"ЛНУ",
@@ -64,14 +70,13 @@ const student3 = new Student(
 
 console.log(student2.getInfo());
 console.log(student3.getInfo());
-console.log('student:', student2)
-console.log(student.studentsMark);
+console.log("student:", student2);
+console.log(student.marks);
 student.studentsMark = 5;
-console.log(student.studentsMark);
+console.log(student.marks);
 console.log(student.getMidNote());
-const payment = new BudgetStudent(1400,student3)
+const payment = new BudgetStudent(1400, student);
 //payment.getScholarship
-student3.dismissStudent
-console.log(student3)
-student3.recoverStudent
-console.log(student3)
+student3.dismissStudent;
+student3.recoverStudent;
+student3.dismissStudentPayment;
