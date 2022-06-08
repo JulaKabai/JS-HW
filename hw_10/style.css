@@ -1,0 +1,9 @@
+.img-style {
+  height: 100px;
+  width: 100px;
+}
+.background-img{
+background-image: "./animal_img/rainbow area.jpeg";
+height: max-content;
+width: max-content;
+}
