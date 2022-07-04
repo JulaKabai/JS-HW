@@ -17,3 +17,4 @@ document.addEventListener('keydown' , (event) => {
         event.code === elem ? new Audio (`./animal_sonds/${images[index]}.mp3`).play() : event.stopPropagation();
     } );
 })
+

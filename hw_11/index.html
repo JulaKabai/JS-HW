@@ -3,11 +3,17 @@
   <head>
     <title>Parcel Sandbox</title>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" href="./style.css">
+    <link  href="./style.css" rel="stylesheet" />
   </head>
   <body>
+    <div class="button-container">
+    <div id="characters-data"><input type="button" class="character-button" value="characters"></div>
+    <div id="planets-data"><input type="button" class="planets-button" value="planets"></div>
+  </div>
+  <div class="area-data-container">
+    <div id="area-data"></div>
+  </div>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="./js/main.js"></script>
-    <button class="characters-data"></button>
+    <script src="./js/main.js"></script>    
   </body>
 </html>
